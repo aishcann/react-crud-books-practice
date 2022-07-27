@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
-	production: 'https://library-express-api.herokuapp.com',
-	development: 'https://library-express-api.herokuapp.com',
+	production: 'https://ga-remote-library-api.herokuapp.com',
+	development: 'https://ga-remote-library-api.herokuapp.com',
 }
 
 if (window.location.hostname === 'localhost') {

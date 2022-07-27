@@ -22,11 +22,11 @@ By the end of this, developers should be able to:
 
 ## Book API
 
-This project is meant to work along side [this book API](https://library-express-api.herokuapp.com)
+This project is meant to work along side [this book API](https://github.com/sei-ec-remote/library-api)
 to demonstrate creating a basic single page application in React that talks to an
 Express API.
 
-Navigate to [`/books`](https://library-express-api.herokuapp.com/books) in your
+Navigate to [`/books`](https://ga-remote-library-api.herokuapp.com/books) in your
 browser. You should see an object with a key `'books'` that points to an array
 of book objects. We will use this book data throughout this lesson.
 
@@ -38,7 +38,7 @@ which is a command line tool that lets you create new React projects out of thin
 The main features that this lesson has that are not included in `create-react-app`:
 
 - `react-router v5` - We're using an older version of router for this lesson, but don't fret too much about it. We'll learn more about router once we learn function components and hooks!
-- React start script has been changed to customize the port. This is because of CORS rules established by the library API we're using. To customize your port in react, use this as your start script in `package.json` under `scripts:` : `"start": "PORT=7165 react-scripts start"`
+
 
 ## CRUD a Book
 
