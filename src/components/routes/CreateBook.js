@@ -1,3 +1,4 @@
+// Nit: add space around useState like all other import calls
 import React, {useState} from 'react'
 import axios from 'axios'
 import Layout from './../shared/Layout'
@@ -19,12 +20,13 @@ const CreateBook = () => {
     const [book, setBook] = useState(initialState)
 
     const handleChange = (event) => {
-        event.persist()
-        setBook({
-            ...book,
-            [event.target.name]: event.target.value
-        })
-    }
+			// Nit: Since v17 event.persist() doesn't do anything because SyntheticEvent is no longer pooled. Source: https://reactjs.org/docs/events.html
+			event.persist()
+			setBook({
+				...book,
+				[event.target.name]: event.target.value,
+			})
+		}
     
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -43,6 +45,7 @@ const CreateBook = () => {
                     createdId: res.data.book._id
                 })
             })
+            // Handle Errors correctly here. Message to the user
             .catch(console.error)
     }
 
