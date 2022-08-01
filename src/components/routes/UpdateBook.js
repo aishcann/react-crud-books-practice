@@ -32,6 +32,7 @@ const UpdateBook = (props) => {
     }, [id])
 
     const handleChange = (event) => {
+        // Nit: Same as in the CreateBook component
         event.persist();
         setBook({
             ...book,
@@ -51,9 +52,11 @@ const UpdateBook = (props) => {
             url: `${apiUrl}/books/${id}`,
             data: { book },
         })
+        // Remove `res` since we are not using it
             .then((res) => {
                 setBook({ ...book, updated: true });
             })
+            // handle error correctly here. Message the user
             .catch(console.error);
     };
 
