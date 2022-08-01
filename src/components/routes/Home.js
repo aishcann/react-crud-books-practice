@@ -7,7 +7,7 @@ export default class Home extends Component {
     render () {
         return (
             <Layout>
-                <h4>Welcome! Let's Learn to CRUD</h4>
+                <h4>CRUD Action going strong</h4>
             </Layout>
         )
     }
