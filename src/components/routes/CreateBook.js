@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import Layout from './../shared/Layout'
 import BookForm from './../shared/BookForm'
@@ -19,7 +19,6 @@ const CreateBook = () => {
     const [book, setBook] = useState(initialState)
 
     const handleChange = (event) => {
-        event.persist()
         setBook({
             ...book,
             [event.target.name]: event.target.value
@@ -38,13 +37,15 @@ const CreateBook = () => {
             url: `${apiUrl}/books`,
             data: { book }
         })
-            .then(res => {
+            .then( res => {
                 setBook({...book,
                     createdId: res.data.book._id
                 })
             })
-            .catch(console.error)
-    }
+            .catch(() => {
+                alert('something went wrong. please try again.')
+            })
+        }
 
   return (
     <Layout>

@@ -32,7 +32,6 @@ const UpdateBook = (props) => {
     }, [id])
 
     const handleChange = (event) => {
-        event.persist();
         setBook({
             ...book,
             [event.target.name]: event.target.value,
@@ -51,10 +50,12 @@ const UpdateBook = (props) => {
             url: `${apiUrl}/books/${id}`,
             data: { book },
         })
-            .then((res) => {
+            .then(() => {
                 setBook({ ...book, updated: true });
             })
-            .catch(console.error);
+            .catch(() => {
+                alert('something went wrong. please try again.');
+            });
     };
 
   return (

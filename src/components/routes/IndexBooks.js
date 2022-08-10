@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Layout from './../shared/Layout'
 import axios from 'axios'
@@ -10,10 +10,12 @@ const IndexBooks = () => {
 
     useEffect(() => {
         axios(apiUrl + '/books')
-        .then(res => {
-            setBooks(res.data.books)
-        })
-        .catch(console.error)
+            .then((res) => {
+                setBooks(res.data.books);
+            })
+            .catch(() => {
+                alert('something went wrong. please try again.');
+            });
     }, [])
 
   return (

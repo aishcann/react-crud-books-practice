@@ -26,14 +26,16 @@ const ShowBook = (props) => {
     }, [id])
 
     const deleteBook = () => {
-        axios.delete(`${apiUrl}/books/${id}`)
-        .then(res => {
-            setBook({
-                deleted: true
+        axios
+            .delete(`${apiUrl}/books/${id}`)
+            .then(() => {
+                setBook({
+                    deleted: true,
+                });
             })
-        })
-        .catch(console.error)
-
+            .catch(() => {
+                alert('something went wrong. please try again.');
+            });
     }
 
     if (book.deleted) {
