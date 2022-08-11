@@ -58,19 +58,48 @@ const UpdateBook = (props) => {
             });
     };
 
+    const div = {
+                    textAlign: 'center',
+                    position: 'absolute',
+                    margin: 'auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    top: '150px',
+                    left: 0,
+                    right: 0,
+                    bottom: '150px',
+                };
+
+    const headerText = {
+			color: 'white',
+			fontSize: '24px',
+			backgroundColor: 'black',
+			marginTop: '10px',
+			width: '600px',
+			height: '50px',
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+			borderRadius: '20px',
+		};
+
   return (
 		<Layout>
-			<h3>Update Book</h3>
-			{!book.updated ? (
-				<BookForm
-					book={book}
-					handleChange={handleChange}
-					handleSubmit={handleSubmit}
-					cancelPath={/books/ % { id }}
-				/>
-			) : (
-				<Redirect to={`/books/${id}`} />
-			)}
+			<div style={div}>
+				<h3 style={headerText}>Update Book</h3>
+				{!book.updated ? (
+					<BookForm
+						book={book}
+						handleChange={handleChange}
+						handleSubmit={handleSubmit}
+						cancelPath={/books/ % { id }}
+					/>
+				) : (
+					<Redirect to={`/books/${id}`} />
+				)}
+			</div>
 		</Layout>
 	);
 }

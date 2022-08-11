@@ -2,7 +2,7 @@
 
 # React CRUD
 
-This is a GA student assignment that I turned into a personal exercise for myself. The objectives were to work with an API and incorporate full CRUD functionality into a React App.
+This is a GA student assignment that I turned into a personal exercise for myself. The objectives were to work with an API and incorporate full CRUD functionality into a React App. In addition to adding full CRUD, I've added styling as well.
 
 
 ## Book API

@@ -38,30 +38,57 @@ const CreateBook = () => {
             data: { book }
         })
             .then( res => {
+                console.log(res.data.book)
                 setBook({...book,
                     createdId: res.data.book._id
                 })
+                console.log(book)
             })
             .catch(() => {
                 alert('something went wrong. please try again.')
             })
         }
 
-        const text = {
-            fontSize: 24
-        }
+        const div = {
+                    textAlign: 'center',
+                    position: 'absolute',
+                    margin: 'auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    top: '150px',
+                    left: 0,
+                    right: 0,
+                    bottom: '150px',
+                };
+
+        const headerText = {
+					color: 'white',
+					fontSize: '24px',
+					backgroundColor: 'black',
+					marginTop: '10px',
+					width: '600px',
+					height: '50px',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					borderRadius: '20px',
+				};
 
   return (
-    <Layout>
-        <h1 style={text}>Edit Book</h1>
-        <BookForm 
-            book={book}
-            handleSubmit={handleSubmit}
-            handleChange={handleChange}
-            cancelPath={'/books'}
-        />
-    </Layout>
-  )
+		<Layout>
+			<div style={div}>
+				<h1 style={headerText}>Edit Book</h1>
+				<BookForm
+					book={book}
+					handleSubmit={handleSubmit}
+					handleChange={handleChange}
+					cancelPath={'/books'}
+				/>
+			</div>
+		</Layout>
+	);
 }
 
 export default CreateBook
