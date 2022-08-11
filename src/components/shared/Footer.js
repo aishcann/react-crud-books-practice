@@ -1,7 +1,19 @@
-import React from 'react'
+import React from 'react';
+
+const footer = {
+	position: 'absolute',
+	bottom: 0,
+	backgroundColor: 'black',
+	width: '100%',
+	textAlign: 'center',
+	paddingTop: '10px',
+  color: 'white'
+};
 
 const Footer = () => (
-  <p>Created by GA SEI IcePops</p>
-)
+	<div className='footer' style={footer}>
+		<p>Created by Aisha Cannon</p>
+	</div>
+);
 
-export default Footer
+export default Footer;

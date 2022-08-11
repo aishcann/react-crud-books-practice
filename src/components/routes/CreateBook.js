@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import Layout from './../shared/Layout'
+import Layout from '../shared/Layout'
 import BookForm from './../shared/BookForm'
 import apiUrl from './../../apiConfig'
 
@@ -47,9 +47,13 @@ const CreateBook = () => {
             })
         }
 
+        const text = {
+            fontSize: 24
+        }
+
   return (
     <Layout>
-        <h1>Edit Book</h1>
+        <h1 style={text}>Edit Book</h1>
         <BookForm 
             book={book}
             handleSubmit={handleSubmit}

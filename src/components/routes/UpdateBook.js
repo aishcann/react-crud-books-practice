@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-import Layout from './../shared/Layout'
+import Layout from '../shared/Layout'
 import BookForm from './../shared/BookForm'
 import apiUrl from '../../apiConfig'
 
